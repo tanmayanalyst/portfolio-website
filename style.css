@@ -1809,34 +1809,93 @@ body {
   text-overflow: ellipsis;
 }
 
-.skill-pct {
+.skill-tier-badge {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 10.5px;
   font-weight: 600;
-  color: var(--accent-red);
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
   white-space: nowrap;
   flex-shrink: 0;
 }
 
-.skill-bar-track {
-  width: 100%;
-  height: 5px;
-  border-radius: var(--radius-full);
+.tier-advanced {
+  background: rgba(230, 25, 60, 0.16);
+  border: 1px solid rgba(255, 42, 75, 0.45);
+  color: #ff4d6d;
+}
+
+.tier-specialized {
+  background: rgba(168, 85, 247, 0.16);
+  border: 1px solid rgba(168, 85, 247, 0.45);
+  color: #c084fc;
+}
+
+.tier-intermediate {
   background: rgba(255, 255, 255, 0.08);
-  overflow: hidden;
-  margin-bottom: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #e2e8f0;
 }
 
-.skill-bar-fill {
-  height: 100%;
-  border-radius: var(--radius-full);
+/* 3-Segment Categorical Proficiency Meter */
+.skill-tier-meter {
+  display: flex;
+  gap: 4px;
+  width: 100%;
+  margin: 10px 0 10px;
+}
+
+.tier-segment {
+  height: 4px;
+  flex: 1;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.tier-segment.active {
   background: linear-gradient(90deg, #be123c, #ff2a4b);
+  box-shadow: 0 0 8px rgba(255, 42, 75, 0.35);
 }
 
-.skill-sub {
+.tier-specialized-meter .tier-segment.active {
+  background: linear-gradient(90deg, #9333ea, #c084fc);
+  box-shadow: 0 0 8px rgba(192, 132, 252, 0.35);
+}
+
+.skill-meta-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.skill-domain {
   font-size: 11px;
+  font-weight: 500;
   color: var(--text-dim);
-  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.skill-demonstrated {
+  font-size: 11px;
+  color: #cbd5e1;
+  line-height: 1.35;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.skill-demonstrated-tag {
+  color: var(--accent-red);
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  flex-shrink: 0;
 }
 
 .skills-bottom-layout {
