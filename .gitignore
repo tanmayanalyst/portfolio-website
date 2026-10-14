@@ -8,3 +8,6 @@ temp/
 # OS metadata
 .DS_Store
 Thumbs.db
+
+.vercel
+.env*

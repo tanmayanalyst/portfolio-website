@@ -1,0 +1,4 @@
+temp/
+.remake/
+.git/
+.env.local
