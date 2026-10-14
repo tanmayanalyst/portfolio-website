@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tanmay Thakur — Building Intelligent Systems & Automation</title>
+  <meta name="description" content="Tanmay Thakur is an automation engineer & developer specializing in Python, SQL, Prompt Engineering, n8n workflows, and autonomous AI systems. Based in Dewas, MP, India." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body class="min-h-full bg-[#040407] text-[#f4f4f7] antialiased theme-crimson">
+  <!-- Custom Futuristic Neon Crimson Cursor -->
+  <div id="custom-cursor-dot" class="custom-cursor-dot" aria-hidden="true"></div>
+  <div id="custom-cursor-ring" class="custom-cursor-ring" aria-hidden="true"></div>
+
+  <!-- Ambient Canvas Particle Canvas -->
+  <canvas id="ambient-canvas" class="ambient-canvas" aria-hidden="true"></canvas>
+
+  <!-- Dynamic Scroll-Interactive Ambient Photos Layer -->
+  <div id="ambient-photos-container" class="ambient-photos-container" aria-hidden="true">
+    <!-- Photo 1: In Flow (Hero/About transition) -->
+    <div class="ambient-photo-card card-flow" data-speed="0.15" data-base-rot="-5">
+      <div class="ambient-photo-frame">
+        <img src="/tanmay-1.jpeg" alt="Tanmay in flow" class="ambient-photo-img" />
+        <div class="ambient-photo-overlay">
+          <span class="ambient-photo-label">// in flow</span>
+          <span class="ambient-photo-sub">Deep Focus</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Photo 2: System Vision (About/Projects transition) -->
+    <div class="ambient-photo-card card-vision" data-speed="-0.18" data-base-rot="4">
+      <div class="ambient-photo-frame">
+        <img src="/tanmay-2.jpeg" alt="Tanmay architecture" class="ambient-photo-img" />
+        <div class="ambient-photo-overlay">
+          <span class="ambient-photo-label">// vision</span>
+          <span class="ambient-photo-sub">System Architect</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Photo 3: Autonomous Builder (Projects/Skills transition) -->
+    <div class="ambient-photo-card card-build" data-speed="0.16" data-base-rot="-4">
+      <div class="ambient-photo-frame">
+        <img src="/tanmay-3.jpeg" alt="Tanmay autonomous" class="ambient-photo-img" />
+        <div class="ambient-photo-overlay">
+          <span class="ambient-photo-label">// iterate</span>
+          <span class="ambient-photo-sub">Autonomous Desk</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fixed Navigation Header (72px) -->
+  <header id="main-header" class="main-header">
+    <nav class="nav-container">
+      <a href="#top" class="brand-link">
+        <span class="brand-logo-box">
+          <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2" />
+            <line x1="12" y1="22" x2="12" y2="15.5" />
+            <polyline points="22 8.5 12 15.5 2 8.5" />
+          </svg>
+        </span>
+        <span class="brand-name">Tanmay</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#top" class="nav-item active">Home<span class="nav-indicator"></span></a></li>
+        <li><a href="#about" class="nav-item">About<span class="nav-indicator"></span></a></li>
+        <li><a href="#projects" class="nav-item">Projects<span class="nav-indicator"></span></a></li>
+        <li><a href="#skills" class="nav-item">Skills<span class="nav-indicator"></span></a></li>
+        <li><a href="#contact" class="nav-item">Contact<span class="nav-indicator"></span></a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="sound-toggle-btn" class="sound-toggle-btn magnetic-btn" aria-label="Toggle Sound Effects" title="Toggle Sound">
+          <svg class="icon-sound icon-sound-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" />
+          </svg>
+          <svg class="icon-sound icon-sound-off hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+            <line x1="23" y1="9" x2="17" y2="15" />
+            <line x1="17" y1="9" x2="23" y2="15" />
+          </svg>
+        </button>
+
+        <a href="#contact" class="btn-connect shimmer-sweep magnetic-btn">
+          <span>Let's Connect</span>
+          <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+
+      <button id="mobile-menu-btn" class="mobile-toggle" aria-label="Toggle navigation menu">
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-drawer" class="mobile-drawer hidden">
+      <a href="#top" class="mobile-nav-link">Home</a>
+      <a href="#about" class="mobile-nav-link">About</a>
+      <a href="#projects" class="mobile-nav-link">Projects</a>
+      <a href="#skills" class="mobile-nav-link">Skills</a>
+      <a href="#contact" class="mobile-nav-link">Contact</a>
+      <a href="#contact" class="btn-connect mobile-connect">Let's Connect →</a>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <!-- Hero Section (h: 900px) -->
+    <section id="top" class="hero-section">
+      <div class="hero-backdrop" aria-hidden="true">
+        <div class="hero-radial-glow"></div>
+        <div class="hero-noise"></div>
+      </div>
+
+      <div class="section-container hero-container">
+        <div class="hero-grid">
+          <!-- Hero Left Column -->
+          <div class="hero-content">
+            <p class="section-mono-tag">
+              // HELLO, I'M<span class="cursor-blink"></span>
+            </p>
+
+            <h1 class="hero-title">Tanmay Thakur</h1>
+            <h2 class="hero-subhead">
+              I build intelligent systems<br />
+              for a smarter <span class="text-gradient-accent">tomorrow.</span>
+            </h2>
+
+            <p class="hero-description">
+              Developer & automation engineer specializing in Python, SQL, Prompt Engineering, and n8n workflows. Building AI agents, autonomous bots, and intelligent pipelines that scale.
+            </p>
+
+            <div class="hero-btn-row">
+              <a href="#projects" class="btn-primary shimmer-sweep magnetic-btn">
+                <span>View My Work</span>
+                <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+
+              <a href="#contact" class="btn-secondary magnetic-btn">
+                <svg class="icon-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                </svg>
+                <span>Let's Connect</span>
+              </a>
+            </div>
+
+            <div class="hero-social-row">
+              <a href="https://github.com/tanmayanalyst" target="_blank" rel="noreferrer" class="social-icon-btn magnetic-btn" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.75 2.69 1.25 3.34.95.1-.75.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .3.2.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z" />
+                </svg>
+              </a>
+
+              <a href="https://www.linkedin.com/in/tanmay-thakur-45359b32a/" target="_blank" rel="noreferrer" class="social-icon-btn magnetic-btn" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z" />
+                </svg>
+              </a>
+
+              <a href="https://instagram.com/tanmayy__ll?rpxt=ZXowZm8zZGJrZ2c2" target="_blank" rel="noreferrer" class="social-icon-btn magnetic-btn" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </a>
+
+              <span class="status-pill">
+                <span class="pulse-beacon">
+                  <span class="beacon-wave"></span>
+                  <span class="beacon-core"></span>
+                </span>
+                <span>Open to opportunities</span>
+              </span>
+            </div>
+
+            <div class="hero-meta-row">
+              <span class="meta-item">
+                <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <span>Currently in Dewas, MP, India</span>
+              </span>
+
+              <span id="hero-clock" class="clock-badge">IST --:--:--</span>
+            </div>
+          </div>
+
+          <!-- Hero Right Column: Profile Avatar Card & Mindset Card -->
+          <div class="hero-aside">
+            <div class="hero-profile-container">
+              <div class="hero-avatar-card tilt-card spotlight-card">
+                <div class="hero-avatar-img-wrap">
+                  <img src="/tanmay-2.jpeg" alt="Tanmay Thakur" class="hero-avatar-img" />
+                </div>
+                <div class="hero-avatar-footer">
+                  <div class="avatar-info">
+                    <span class="avatar-name">Tanmay Thakur</span>
+                    <span class="avatar-loc">Dewas, MP, India</span>
+                  </div>
+                  <span class="status-pill mini-pill">
+                    <span class="pulse-beacon">
+                      <span class="beacon-wave"></span>
+                      <span class="beacon-core"></span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+
+              <div class="mindset-card spotlight-card">
+                <div class="mindset-card-inner">
+                  <p class="mindset-tag">// mindset</p>
+                  <p class="mindset-text">
+                    Build <span class="dot-accent">·</span> Automate <span class="dot-accent">·</span> Scale <span class="dot-accent">·</span> Repeat
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <a href="#about" class="scroll-indicator" aria-label="Scroll to explore">
+          <span class="mouse-pill">
+            <span class="wheel-dot"></span>
+          </span>
+          <span class="scroll-text">Scroll to explore</span>
+          <span class="scroll-stem"></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- About Section (h: 990px) -->
+    <section id="about" class="about-section">
+      <div class="section-container">
+        <div class="about-grid">
+          <!-- Left Column -->
+          <div class="about-left">
+            <p class="section-mono-tag">// 01. ABOUT ME</p>
+            <h2 class="section-heading">
+              More than<br class="hidden sm:inline" /> just a <span class="text-gradient-accent">developer.</span>
+            </h2>
+
+            <p class="about-lead">
+              I'm Tanmay Thakur, a 3rd Year B.Tech CSE student at Institute of Engineering & Science, Indore, and an automation engineer based in Dewas, MP, India. I specialize in building autonomous AI pipelines, prompt-engineered systems, and scalable workflows using Python, SQL, and n8n. Passionate about vibe coding, generative AI, and turning repetitive complexity into seamless 24/7 automation.
+            </p>
+
+            <div class="credentials-grid">
+              <div class="glass-credential-card spotlight-card">
+                <div class="credential-icon-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                    <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                  </svg>
+                </div>
+                <p class="credential-title">B.Tech CSE 3rd Year</p>
+                <p class="credential-subtitle">Institute of Engineering & Science, Indore</p>
+              </div>
+
+              <div class="glass-credential-card spotlight-card">
+                <div class="credential-icon-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <p class="credential-title">Dewas, MP, India</p>
+                <p class="credential-subtitle">Based in MP, India</p>
+              </div>
+
+              <div class="glass-credential-card spotlight-card">
+                <div class="credential-icon-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="16 18 22 12 16 6" />
+                    <polyline points="8 6 2 12 8 18" />
+                  </svg>
+                </div>
+                <p class="credential-title">AI & Automation</p>
+                <p class="credential-subtitle">Pipelines, n8n & LLMs</p>
+              </div>
+            </div>
+
+            <figure class="quote-container">
+              <blockquote class="handwritten-quote">
+                “Turning curiosity into autonomous, intelligent technology.”
+              </blockquote>
+            </figure>
+          </div>
+
+          <!-- Right Column: Focus Photo & What I Enjoy Panel -->
+          <div class="about-right">
+            <div class="about-focus-card tilt-card spotlight-card">
+              <div class="about-focus-frame">
+                <img src="/tanmay-1.jpeg" alt="Tanmay Thakur in flow" class="about-focus-img" />
+                <div class="about-focus-overlay">
+                  <div class="about-focus-badge">
+                    <span class="focus-dot"></span>
+                    <span>// IN FLOW • DEEP FOCUS</span>
+                  </div>
+                  <div class="about-focus-caption">
+                    <span class="focus-title">Architecting Autonomous Systems</span>
+                    <span class="focus-sub">Tanmay Thakur • Indore / Dewas</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="enjoy-card spotlight-card">
+              <div class="enjoy-header">
+                <h3 class="enjoy-title">What I Enjoy</h3>
+                <span class="enjoy-sparkle">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 3l1.9 5.6a2 2 0 0 0 1.5 1.5L21 12l-5.6 1.9a2 2 0 0 0-1.5 1.5L12 21l-1.9-5.6a2 2 0 0 0-1.5-1.5L3 12l5.6-1.9a2 2 0 0 0 1.5-1.5L12 3z" />
+                  </svg>
+                </span>
+              </div>
+
+              <ul class="enjoy-list">
+                <li class="enjoy-item">
+                  <span class="enjoy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg></span>
+                  <span class="enjoy-label">Autonomous Bots & Pipelines</span>
+                </li>
+                <li class="enjoy-item">
+                  <span class="enjoy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3.08A2.5 2.5 0 0 1 9.5 2Z" /></svg></span>
+                  <span class="enjoy-label">Prompt Engineering & LLMs</span>
+                </li>
+                <li class="enjoy-item">
+                  <span class="enjoy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg></span>
+                  <span class="enjoy-label">SQL & Data Analytics</span>
+                </li>
+                <li class="enjoy-item">
+                  <span class="enjoy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg></span>
+                  <span class="enjoy-label">n8n Workflow Automation</span>
+                </li>
+                <li class="enjoy-item">
+                  <span class="enjoy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></span>
+                  <span class="enjoy-label">Vibe Coding & Prototyping</span>
+                </li>
+                <li class="enjoy-item">
+                  <span class="enjoy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg></span>
+                  <span class="enjoy-label">Meta Graph API & Integrations</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metric Stat Row -->
+        <div class="stats-banner">
+          <div class="stat-col">
+            <span class="stat-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg></span>
+            <div>
+              <span class="stat-number">10+</span>
+              <span class="stat-label">Automated Pipelines</span>
+            </div>
+          </div>
+
+          <div class="stat-col">
+            <span class="stat-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5z" /></svg></span>
+            <div>
+              <span class="stat-number">2+</span>
+              <span class="stat-label">Years of Learning</span>
+            </div>
+          </div>
+
+          <div class="stat-col">
+            <span class="stat-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2" /><polyline points="2 17 12 22 22 17" /><polyline points="2 12 12 17 22 12" /></svg></span>
+            <div>
+              <span class="stat-number">8+</span>
+              <span class="stat-label">Technologies</span>
+            </div>
+          </div>
+
+          <div class="stat-col">
+            <span class="stat-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /></svg></span>
+            <div>
+              <span class="stat-number">24/7</span>
+              <span class="stat-label">Always Autonomous</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section (h: 1569px desktop) -->
+    <section id="projects" class="projects-section">
+      <div class="section-container">
+        <div class="projects-header-box">
+          <p class="section-mono-tag">// 02. PROJECTS</p>
+          <h2 class="section-heading text-center">
+            Projects that solve <span class="text-gradient-accent">real problems.</span>
+          </h2>
+          <p class="section-subtext text-center">A blend of autonomous intelligence, data engineering, and automation.</p>
+          <span class="badge-corner-script" aria-hidden="true">Automate<br />Scale<br />Impact</span>
+        </div>
+
+        <!-- Category Tabs -->
+        <div class="category-tabs" role="tablist">
+          <button class="cat-tab active" data-cat="all">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /></svg>
+            All Projects
+          </button>
+          <button class="cat-tab" data-cat="web">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" /></svg>
+            Web Apps
+          </button>
+          <button class="cat-tab" data-cat="ai">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 18V5M15 13a4 4 0 0 1-6 0M18 18a4 4 0 0 0 2-7.5M6 18a4 4 0 0 1-2-7.5" /></svg>
+            AI / ML
+          </button>
+          <button class="cat-tab" data-cat="tools">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.1-3.1a6 6 0 0 1-8.3 7.1l-7.9 7.9a1 1 0 0 1-3-3l7.9-7.9a6 6 0 0 1 7.1-8.3z" /></svg>
+            Automation & Tools
+          </button>
+          <button class="cat-tab" data-cat="oss">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>
+            Open Source
+          </button>
+        </div>
+
+        <!-- Project Cards Grid -->
+        <div class="projects-grid">
+          <!-- Project 1 (Featured: PromptPilot) -->
+          <article class="project-card featured tilt-card spotlight-card" data-category="ai web tools">
+            <span class="featured-badge">
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+              Featured
+            </span>
+            <div class="card-media">
+              <div class="media-preview-canvas preview-apex">
+                <div class="mock-ui-shell">
+                  <div class="mock-nav-strip">
+                    <span class="chip-active">Live App</span>
+                    <span class="chip-dim">Prompt Optimizer</span>
+                    <span class="chip-dim">LLM Bench</span>
+                  </div>
+                  <div class="mock-code-box">
+                    <div class="mock-dots"><span></span><span></span><span></span></div>
+                    <code>system_prompt = "Act as expert architect"<br/>optimized = promptpilot.refine(system_prompt)</code>
+                  </div>
+                </div>
+              </div>
+              <span class="media-hover-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10" /></svg></span>
+            </div>
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag-pill">Prompt Engineering</span>
+                <span class="tag-pill">LLM Copilot</span>
+                <span class="tag-pill">Web App</span>
+              </div>
+              <h3 class="card-title">PromptPilot</h3>
+              <p class="card-desc">Intelligent prompt engineering playground and optimizer. Helps developers test, refine, and generate high-precision prompts for modern LLM workflows.</p>
+              <div class="card-footer">
+                <a href="https://promptpilott.vercel.app/" target="_blank" rel="noreferrer" class="link-view-project">Live Demo ↗</a>
+                <a href="https://github.com/tanmayanalyst/promptpilot" target="_blank" rel="noreferrer" class="btn-github-mini" aria-label="GitHub Source">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: SkillMatch -->
+          <article class="project-card tilt-card spotlight-card" data-category="ai web">
+            <div class="card-media">
+              <div class="media-preview-canvas preview-talent">
+                <div class="mock-ui-shell">
+                  <div class="mock-resume-box">
+                    <div class="vector-top"><span>Semantic Match</span><span class="vector-val">Cosine 0.96</span></div>
+                    <h4>SkillMatch Engine</h4>
+                    <p>Vector similarity profile & talent matching pipeline.</p>
+                  </div>
+                </div>
+              </div>
+              <span class="media-hover-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10" /></svg></span>
+            </div>
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag-pill">NLP</span>
+                <span class="tag-pill">Semantic Match</span>
+                <span class="tag-pill">Web App</span>
+              </div>
+              <h3 class="card-title">SkillMatch</h3>
+              <p class="card-desc">Intelligent career & talent matching platform analyzing candidate skill profiles against job requirements with semantic scoring and precision filters.</p>
+              <div class="card-footer">
+                <a href="https://skillmatch-psi.vercel.app/" target="_blank" rel="noreferrer" class="link-view-project">Live Demo ↗</a>
+                <a href="https://github.com/tanmayanalyst" target="_blank" rel="noreferrer" class="btn-github-mini" aria-label="GitHub Source">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: AutoNews 24/7 (Instagram Autonomous Desk) -->
+          <article class="project-card tilt-card spotlight-card autonews-card" data-category="ai tools">
+            <div class="card-media">
+              <div class="media-preview-canvas preview-docu">
+                <div class="mock-ui-shell">
+                  <div class="mock-docs-box">
+                    <div class="doc-header">
+                      <span class="doc-badge">24/7 Cron Bot</span>
+                      <span class="doc-search">Meta Graph API</span>
+                    </div>
+                    <h4>India News Ingestion & Poster Gen</h4>
+                    <p>Every 70m: Gemini Spark + Apps Script + IG Graph API</p>
+                  </div>
+                </div>
+              </div>
+              <span class="media-hover-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10" /></svg></span>
+            </div>
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag-pill">Gemini Spark</span>
+                <span class="tag-pill">Apps Script</span>
+                <span class="tag-pill">Meta API</span>
+              </div>
+              <h3 class="card-title">AutoNews 24/7 (IG Bot)</h3>
+              <p class="card-desc">Fully autonomous news bot: researches India's breaking news hourly, generates poster & caption with fact-checking, logs via custom Gmail bridge to XLSX, and publishes to IG every 70 mins 24/7.</p>
+              <div class="card-footer">
+                <a href="https://instagram.com/tanmayy__ll?rpxt=ZXowZm8zZGJrZ2c2" target="_blank" rel="noreferrer" class="link-view-project">View Page ↗</a>
+                <button type="button" id="btn-simulate-bot" class="btn-simulate-bot" title="Run Real-Time Bot Simulation">
+                  <span class="sim-pulse"></span>
+                  <span>▶ Test Run</span>
+                </button>
+                <a href="https://github.com/tanmayanalyst" target="_blank" rel="noreferrer" class="btn-github-mini" aria-label="GitHub Source">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                </a>
+              </div>
+
+              <!-- Interactive Simulated Terminal Drawer -->
+              <div id="bot-terminal" class="bot-terminal hidden">
+                <div class="terminal-bar">
+                  <div class="terminal-dots">
+                    <span class="term-dot red"></span>
+                    <span class="term-dot yellow"></span>
+                    <span class="term-dot green"></span>
+                  </div>
+                  <span class="terminal-title">autonews_pipeline.py</span>
+                  <button type="button" class="terminal-close" id="btn-close-terminal" aria-label="Close Terminal">✕</button>
+                </div>
+                <div class="terminal-body" id="terminal-body">
+                  <div class="term-line term-dim">// Click "▶ Test Run" to execute live simulation</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: Data Analytics Engine -->
+          <article class="project-card tilt-card spotlight-card" data-category="tools">
+            <div class="card-media">
+              <div class="media-preview-canvas preview-gitlens">
+                <div class="mock-ui-shell">
+                  <div class="mock-lens-box">
+                    <div class="lens-head"><span>SQL Data Pipeline</span><span class="score-badge">Optimized</span></div>
+                    <h4>Data Intelligence Engine</h4>
+                    <div class="mock-bars"><span></span><span></span><span></span></div>
+                  </div>
+                </div>
+              </div>
+              <span class="media-hover-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10" /></svg></span>
+            </div>
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag-pill">SQL</span>
+                <span class="tag-pill">Python</span>
+                <span class="tag-pill">Analytics</span>
+              </div>
+              <h3 class="card-title">Data Analytics Engine</h3>
+              <p class="card-desc">End-to-end data transformation and querying framework. Processes structured datasets, executes complex SQL aggregations, and extracts actionable business intelligence.</p>
+              <div class="card-footer">
+                <a href="https://github.com/tanmayanalyst" target="_blank" rel="noreferrer" class="link-view-project">View on GitHub →</a>
+                <a href="https://github.com/tanmayanalyst" target="_blank" rel="noreferrer" class="btn-github-mini" aria-label="GitHub Source">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5: n8n Automation Grid -->
+          <article class="project-card tilt-card spotlight-card" data-category="tools">
+            <div class="card-media">
+              <div class="media-preview-canvas preview-vigil">
+                <div class="mock-ui-shell">
+                  <div class="mock-shield-box">
+                    <div class="shield-indicator"><span class="pulse-red"></span> ACTIVE WORKFLOWS</div>
+                    <h4>n8n Autonomous Orchestration</h4>
+                    <p>Event webhooks, API bridges & automated processing.</p>
+                  </div>
+                </div>
+              </div>
+              <span class="media-hover-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10" /></svg></span>
+            </div>
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag-pill">n8n</span>
+                <span class="tag-pill">Automation</span>
+                <span class="tag-pill">Webhooks</span>
+              </div>
+              <h3 class="card-title">n8n Automation Grid</h3>
+              <p class="card-desc">Production-grade workflow orchestration pipelines integrating multi-platform webhooks, data transformation nodes, API connectors, and event-driven alerting.</p>
+              <div class="card-footer">
+                <a href="https://github.com/tanmayanalyst" target="_blank" rel="noreferrer" class="link-view-project">View on GitHub →</a>
+                <a href="https://github.com/tanmayanalyst" target="_blank" rel="noreferrer" class="btn-github-mini" aria-label="GitHub Source">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 6: Vibe Coding Lab -->
+          <article class="project-card tilt-card spotlight-card" data-category="web oss">
+            <div class="card-media">
+              <div class="media-preview-canvas preview-weather">
+                <div class="mock-ui-shell">
+                  <div class="mock-weather-box">
+                    <div class="weather-top"><span>AI Prototyping</span><span>Instant Deploy</span></div>
+                    <h4>Vibe Coding Playground</h4>
+                    <p>Interactive web experiments built with AI pairing.</p>
+                  </div>
+                </div>
+              </div>
+              <span class="media-hover-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10" /></svg></span>
+            </div>
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag-pill">Vibe Coding</span>
+                <span class="tag-pill">Generative AI</span>
+                <span class="tag-pill">Open Source</span>
+              </div>
+              <h3 class="card-title">Vibe Coding Lab</h3>
+              <p class="card-desc">Rapid prototyping laboratory harnessing generative AI models and instant iterative coding. Building functional micro-apps and web tools in record time.</p>
+              <div class="card-footer">
+                <a href="https://github.com/tanmayanalyst" target="_blank" rel="noreferrer" class="link-view-project">View on GitHub →</a>
+                <a href="https://github.com/tanmayanalyst" target="_blank" rel="noreferrer" class="btn-github-mini" aria-label="GitHub Source">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section (h: 900px desktop) -->
+    <section id="skills" class="skills-section">
+      <div class="section-container">
+        <!-- Upper Area: Right-aligned Skills Toolbox -->
+        <div class="skills-top-layout">
+          <div class="skills-right-content">
+            <div class="skills-header-box">
+              <span class="pill-badge-outline">✦ My Toolbox</span>
+              <h2 class="section-heading">
+                Skills that build <span class="text-gradient-accent">possibilities</span>
+              </h2>
+              <p class="section-subtext">A curated set of technologies, tools, and workflows I use to turn ideas into reality.</p>
+            </div>
+
+            <!-- Skills Filter Tabs (13 categories across 2 rows) -->
+            <div class="skill-category-tabs">
+              <button class="skill-tab active" data-skillcat="all">All</button>
+              <button class="skill-tab" data-skillcat="programming">Programming</button>
+              <button class="skill-tab" data-skillcat="frontend">Frontend</button>
+              <button class="skill-tab" data-skillcat="backend">Backend</button>
+              <button class="skill-tab" data-skillcat="api">API</button>
+              <button class="skill-tab" data-skillcat="ai">AI</button>
+              <button class="skill-tab" data-skillcat="data">Data</button>
+              <button class="skill-tab" data-skillcat="tools">Developer Tools</button>
+              <button class="skill-tab" data-skillcat="os">Operating Systems</button>
+              <button class="skill-tab" data-skillcat="db">Databases</button>
+              <button class="skill-tab" data-skillcat="devops">DevOps</button>
+              <button class="skill-tab" data-skillcat="arch">Architecture</button>
+              <button class="skill-tab" data-skillcat="cs">Computer Science</button>
+            </div>
+
+            <p class="skill-count-indicator">Showing 8 of 8 — select a category to explore everything.</p>
+
+            <!-- Skill Cards 4-Column Grid -->
+            <div class="skills-grid">
+              <div class="skill-card spotlight-card" data-skillgroup="programming backend">
+                <div class="skill-card-top">
+                  <span class="skill-icon-box">🐍</span>
+                  <div class="skill-head">
+                    <span class="skill-name">Python</span>
+                    <span class="skill-pct">95%</span>
+                  </div>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 95%;"></div></div>
+                <span class="skill-sub">Programming</span>
+              </div>
+
+              <div class="skill-card spotlight-card" data-skillgroup="db data backend">
+                <div class="skill-card-top">
+                  <span class="skill-icon-box">🗄️</span>
+                  <div class="skill-head">
+                    <span class="skill-name">SQL</span>
+                    <span class="skill-pct">98%</span>
+                  </div>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 98%;"></div></div>
+                <span class="skill-sub">Databases & Data</span>
+              </div>
+
+              <div class="skill-card spotlight-card" data-skillgroup="ai">
+                <div class="skill-card-top">
+                  <span class="skill-icon-box">✨</span>
+                  <div class="skill-head">
+                    <span class="skill-name">Prompt Engineering</span>
+                    <span class="skill-pct">95%</span>
+                  </div>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 95%;"></div></div>
+                <span class="skill-sub">AI & LLMs</span>
+              </div>
+
+              <div class="skill-card spotlight-card" data-skillgroup="tools devops">
+                <div class="skill-card-top">
+                  <span class="skill-icon-box">⚡</span>
+                  <div class="skill-head">
+                    <span class="skill-name">n8n Automation</span>
+                    <span class="skill-pct">92%</span>
+                  </div>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 92%;"></div></div>
+                <span class="skill-sub">Automation & Workflows</span>
+              </div>
+
+              <div class="skill-card spotlight-card" data-skillgroup="ai">
+                <div class="skill-card-top">
+                  <span class="skill-icon-box">🧠</span>
+                  <div class="skill-head">
+                    <span class="skill-name">Gemini Spark & AI</span>
+                    <span class="skill-pct">90%</span>
+                  </div>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+                <span class="skill-sub">Generative AI</span>
+              </div>
+
+              <div class="skill-card spotlight-card" data-skillgroup="frontend tools">
+                <div class="skill-card-top">
+                  <span class="skill-icon-box">🚀</span>
+                  <div class="skill-head">
+                    <span class="skill-name">Vibe Coding</span>
+                    <span class="skill-pct">95%</span>
+                  </div>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 95%;"></div></div>
+                <span class="skill-sub">Rapid Prototyping</span>
+              </div>
+
+              <div class="skill-card spotlight-card" data-skillgroup="api backend">
+                <div class="skill-card-top">
+                  <span class="skill-icon-box">🔗</span>
+                  <div class="skill-head">
+                    <span class="skill-name">Meta Graph API</span>
+                    <span class="skill-pct">88%</span>
+                  </div>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 88%;"></div></div>
+                <span class="skill-sub">APIs & Integrations</span>
+              </div>
+
+              <div class="skill-card spotlight-card" data-skillgroup="tools devops">
+                <div class="skill-card-top">
+                  <span class="skill-icon-box">⎇</span>
+                  <div class="skill-head">
+                    <span class="skill-name">Git & Automation</span>
+                    <span class="skill-pct">90%</span>
+                  </div>
+                </div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+                <span class="skill-sub">Developer Tools</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lower Area: Quote Figure + Stat Pills + Callout Banner -->
+        <div class="skills-bottom-layout">
+          <div class="skills-bottom-left-group">
+            <figure class="skills-quote-figure">
+              <svg class="quote-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+              </svg>
+              <blockquote>Automation is not just about saving time; it's about amplifying human potential.</blockquote>
+            </figure>
+
+            <div class="skills-stat-pills">
+              <div class="skill-stat-pill">
+                <span class="stat-pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" /></svg></span>
+                <div>
+                  <span class="stat-pill-num">8+</span>
+                  <span class="stat-pill-lbl">Core Tech Stack</span>
+                </div>
+              </div>
+
+              <div class="skill-stat-pill">
+                <span class="stat-pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg></span>
+                <div>
+                  <span class="stat-pill-num">100%</span>
+                  <span class="stat-pill-lbl">Driven & Curious</span>
+                </div>
+              </div>
+
+              <div class="skill-stat-pill">
+                <span class="stat-pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg></span>
+                <div>
+                  <span class="stat-pill-num">10+</span>
+                  <span class="stat-pill-lbl">Pipelines & Bots</span>
+                </div>
+              </div>
+
+              <div class="skill-stat-pill">
+                <span class="stat-pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+                <div>
+                  <span class="stat-pill-num">Always</span>
+                  <span class="stat-pill-lbl">Innovating</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="#contact" class="skills-callout-card spotlight-card">
+            <div class="callout-bg-img" style="background-image: url('/tanmay-3.jpeg');" aria-hidden="true"></div>
+            <div class="callout-overlay" aria-hidden="true"></div>
+            <div class="callout-content">
+              <span class="callout-badge">// AUTONOMOUS DESK</span>
+              <span class="callout-hand-text">Better Projects Ahead...</span>
+            </div>
+            <span class="callout-arrow-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section (h: 942px desktop) -->
+    <section id="contact" class="contact-section">
+      <div class="section-container wide-container">
+        <div class="contact-grid">
+          <!-- Left Info Column -->
+          <div class="contact-left">
+            <p class="section-mono-tag">// 04. CONTACT</p>
+            <h2 class="section-heading">
+              Let's Build<br />
+              Something Amazing <span class="text-gradient-accent">Together.</span>
+            </h2>
+
+            <p class="contact-lead">
+              Have an automation idea, AI project, collaboration opportunity, or just want to connect? I'd love to hear from you. Let's build intelligent workflows that turn ideas into reality.
+            </p>
+
+            <div class="contact-cards-grid">
+              <div class="glass-contact-item spotlight-card">
+                <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg></span>
+                <div>
+                  <span class="contact-type">Email</span>
+                  <a href="mailto:thakurtanmay4682@gmail.com" class="contact-val">thakurtanmay4682@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="glass-contact-item spotlight-card">
+                <span class="contact-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.75 2.69 1.25 3.34.95.1-.75.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .3.2.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z" /></svg></span>
+                <div>
+                  <span class="contact-type">GitHub</span>
+                  <a href="https://github.com/tanmayanalyst" target="_blank" rel="noreferrer" class="contact-val">github.com/tanmayanalyst</a>
+                </div>
+              </div>
+
+              <div class="glass-contact-item spotlight-card">
+                <span class="contact-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z" /></svg></span>
+                <div>
+                  <span class="contact-type">LinkedIn</span>
+                  <a href="https://www.linkedin.com/in/tanmay-thakur-45359b32a/" target="_blank" rel="noreferrer" class="contact-val">linkedin.com/in/tanmay-thakur</a>
+                </div>
+              </div>
+
+              <div class="glass-contact-item spotlight-card">
+                <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /><circle cx="12" cy="10" r="3" /></svg></span>
+                <div>
+                  <span class="contact-type">Location</span>
+                  <span class="contact-val">Dewas, MP, India</span>
+                </div>
+              </div>
+            </div>
+
+            <figure class="contact-quote">
+              <blockquote class="handwritten-quote">“Let's turn ideas into intelligent reality.”</blockquote>
+              <figcaption class="quote-author">— TANMAY THAKUR</figcaption>
+            </figure>
+          </div>
+
+          <!-- Right Contact Form Column -->
+          <div class="contact-right">
+            <div class="form-container-card spotlight-card">
+              <div class="form-header">
+                <span class="form-badge">📡 SEND A MESSAGE</span>
+                <h3 class="form-title">I'm all <span class="text-gradient-accent">ears!</span></h3>
+                <p class="form-sub">Fill out the form below and I'll get back to you as soon as possible.</p>
+              </div>
+
+              <form id="contact-form" class="interactive-form">
+                <div class="form-row-dual">
+                  <div class="form-field">
+                    <label for="name-input">Your Name</label>
+                    <input type="text" id="name-input" name="name" placeholder="Tanmay Thakur" required />
+                  </div>
+                  <div class="form-field">
+                    <label for="email-input">Your Email</label>
+                    <input type="email" id="email-input" name="email" placeholder="tanmay@example.com" required />
+                  </div>
+                </div>
+
+                <div class="form-field">
+                  <label for="subject-select">Subject</label>
+                  <select id="subject-select" name="subject" required>
+                    <option value="Automation Pipeline">Automation Pipeline</option>
+                    <option value="Project Collaboration">Project Collaboration</option>
+                    <option value="AI / Prompt Engineering">AI / Prompt Engineering</option>
+                    <option value="Job Opportunity">Job Opportunity</option>
+                    <option value="General Inquiry">General Inquiry</option>
+                  </select>
+                </div>
+
+                <div class="form-field">
+                  <label for="message-input">Message</label>
+                  <textarea id="message-input" name="message" rows="4" placeholder="Tell me about your idea, automation workflow, or just say hi!" required></textarea>
+                </div>
+
+                <button type="submit" id="submit-btn" class="btn-submit shimmer-sweep magnetic-btn">
+                  <span id="submit-text">Send Message</span>
+                  <svg class="submit-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </button>
+
+                <!-- Feedback banner -->
+                <div id="form-feedback" class="form-feedback hidden" role="alert">
+                  ✓ Message sent successfully! I'll reply within 24 hours.
+                </div>
+              </form>
+            </div>
+
+            <!-- Other Ways to Connect -->
+            <div class="other-ways-connect">
+              <p class="connect-label">OTHER WAYS TO CONNECT</p>
+              <div class="connect-pills">
+                <a href="https://github.com/tanmayanalyst" target="_blank" rel="noreferrer" class="connect-pill">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.75 2.69 1.25 3.34.95.1-.75.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .3.2.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+                  <span>GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/tanmay-thakur-45359b32a/" target="_blank" rel="noreferrer" class="connect-pill">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg>
+                  <span>LinkedIn</span>
+                </a>
+                <a href="https://instagram.com/tanmayy__ll?rpxt=ZXowZm8zZGJrZ2c2" target="_blank" rel="noreferrer" class="connect-pill">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                  <span>Instagram</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer (h: 690px desktop) -->
+  <footer class="site-footer">
+    <div class="section-container wide-container">
+      <!-- Journey Banner Top of Footer -->
+      <div class="footer-banner-box">
+        <span class="footer-journey-badge">// END OF THE JOURNEY</span>
+        <h2 class="footer-headline">
+          Thanks for <span class="text-gradient-accent">Visiting!</span>
+        </h2>
+        <p class="footer-lead">
+          Let's build something amazing together. Stay curious, keep automating, and I'll see you around the internet!
+        </p>
+        <div class="footer-divider-ornament">
+          <span class="divider-line"></span>
+          <svg class="divider-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span class="divider-line"></span>
+        </div>
+      </div>
+
+      <div class="footer-content-grid">
+        <div class="footer-col brand-col">
+          <a href="#top" class="brand-link">
+            <span class="brand-logo-box">
+              <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2" />
+                <line x1="12" y1="22" x2="12" y2="15.5" />
+              </svg>
+            </span>
+            <span class="brand-name">Tanmay</span>
+          </a>
+          <p class="footer-tagline">Building autonomous systems, intelligent pipelines, and AI-driven solutions.</p>
+          <div class="footer-social-links">
+            <a href="https://github.com/tanmayanalyst" target="_blank" rel="noreferrer" class="magnetic-btn" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.75 2.69 1.25 3.34.95.1-.75.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .3.2.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z" /></svg></a>
+            <a href="https://www.linkedin.com/in/tanmay-thakur-45359b32a/" target="_blank" rel="noreferrer" class="magnetic-btn" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z" /></svg></a>
+            <a href="https://instagram.com/tanmayy__ll?rpxt=ZXowZm8zZGJrZ2c2" target="_blank" rel="noreferrer" class="magnetic-btn" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#top">Home ↗</a></li>
+            <li><a href="#about">About ↗</a></li>
+            <li><a href="#projects">Projects ↗</a></li>
+            <li><a href="#skills">Skills ↗</a></li>
+            <li><a href="#contact">Contact ↗</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Other Places</h4>
+          <ul class="footer-links">
+            <li><a href="https://github.com/tanmayanalyst" target="_blank" rel="noreferrer">GitHub ↗</a></li>
+            <li><a href="https://www.linkedin.com/in/tanmay-thakur-45359b32a/" target="_blank" rel="noreferrer">LinkedIn ↗</a></li>
+            <li><a href="https://instagram.com/tanmayy__ll?rpxt=ZXowZm8zZGJrZ2c2" target="_blank" rel="noreferrer">Instagram ↗</a></li>
+            <li><a href="#contact">Contact ↗</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Let's Connect</h4>
+          <p class="footer-subtext">Open to collaborations, autonomous automation projects, and exciting opportunities.</p>
+          <a href="#contact" class="btn-footer-msg magnetic-btn">
+            <span>Send a Message</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div class="footer-bottom-flex">
+          <p>© 2026 Tanmay Thakur. All rights reserved. | <a href="#top">Dewas, MP, India</a></p>
+          <p class="footer-slogan">✦ AUTOMATE ✕ CODE ✕ IMPACT</p>
+          <p>Made with ♥ in India | Keep Building →</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>

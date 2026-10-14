@@ -1,0 +1,10 @@
+# Dependencies
+node_modules/
+
+# Local Temporary / Archived files
+temp/
+.remake/
+
+# OS metadata
+.DS_Store
+Thumbs.db

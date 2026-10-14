@@ -1,0 +1,12 @@
+{
+  "name": "astra-portfolio",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "serve": "node server.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.50.1"
+  }
+}
